@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const Recipes =  require('./recipes-model.js')
+const Recipes = require('./recipes-model.js')
 
 router.get('/', async (req, res, next) => {
   try{
@@ -30,7 +30,7 @@ router.get('/:id/instructions', async (req, res next) => {
 
 router.get('/:id/shoppinglist', async(req, res, next) => {
   try {
-    const list = await Recipe.findShoppingList(req.params.id)
+    const list = await Recipe.findnIngredients(req.params.id)
     res.json(list)
   } catch (error) {
     next (error)
